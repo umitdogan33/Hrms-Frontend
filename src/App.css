@@ -1,0 +1,39 @@
+.App {
+  text-align: center;
+}
+
+
+.jobAdvertisement{
+  margin-left: 50px;
+  width: 80%;
+}
+
+.test{
+  height: 18pc;
+}
+
+.job{
+  height: 10pc;
+}
+
+.date{
+  font-size: 20px;
+}
+
+.main{
+  background-color: #f9f9f9f9;
+
+}
+
+.titleName{
+  color: black;
+  margin-left: -50px;
+}
+
+ui.detaylar{
+  margin-right: 100pc;
+}
+
+.uidetaylar{
+  margin-left: -100pc;
+}
