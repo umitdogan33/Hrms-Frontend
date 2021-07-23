@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Button,
   Form,
@@ -41,7 +42,7 @@ export default function Login() {
           </Segment>
         </Form>
         <Message>
-          Hesabın yok mu? <a>Kayıt ol</a>
+          Hesabın yok mu? <a><Link to="/register">Kayıt ol</Link></a>
         </Message>
       </Grid.Column>
     </Grid>

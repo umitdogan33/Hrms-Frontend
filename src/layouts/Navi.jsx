@@ -1,5 +1,6 @@
 import React from "react";
 import { Header, Container, Button } from "semantic-ui-react";
+import SignedOut from "./SignedOut";
 
 export default function Navi() {
   return (
@@ -14,15 +15,7 @@ export default function Navi() {
           <a className="item ">
             <i className="search link icon"></i> İş ara
           </a>
-          <a className="item ">Anasayfa</a>
-          <a className="item">Anasayfa</a>
-          <div className="right menu">
-            <Button.Group>
-              <Button color="teal">Giriş Yap</Button>
-              <Button.Or />
-              <Button color="violet">Kayıt Ol</Button>
-            </Button.Group>
-          </div>
+        <SignedOut/>
         </div>
       </Container>
       <hr color="lightgray" />
