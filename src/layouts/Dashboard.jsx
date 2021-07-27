@@ -4,7 +4,8 @@ import Login from "../pages/Login";
 import JobAdvertisement from "./JobAdvertisement";
 import { Route } from "react-router";
 import CandidateRegister from "./CandidateRegister";
-import EmployerRegister from "./EmployerRegister";
+import viewCv from  "../pages/viewCv"
+// import EmployerRegister from "./EmployerRegister";
 export default function Dashboard() {
   return (
     <div className="dashboard">
@@ -13,8 +14,8 @@ export default function Dashboard() {
       <Route  path="/login" component={Login}/>
       <Route exact path="/register" component={Register}/>
       <Route  path="/register/candidate" component={CandidateRegister}/>
-      <Route  path="/register/employers" component={EmployerRegister}/>
-      <Route/>
+      {/* <Route  path="/register/employers" component={EmployerRegister}/> */}
+      <Route path="/cv" component={viewCv}/>
       </div>
   );
 }

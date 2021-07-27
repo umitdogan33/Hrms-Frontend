@@ -1,9 +1,23 @@
 import React from 'react'
-
-export default function SignedIn() {
+import { NavLink } from 'react-router-dom'
+import { Dropdown } from 'semantic-ui-react'
+import '../css/SignedIn.css'
+export default function SignedIn(props) {
     return (
-        <div>
-            
+        <div className="signed_in">
+           <a>
+            <Dropdown text='hoşgeldiniz' className="dropdown_text">
+    <Dropdown.Menu className="dropdown_item">
+    
+      <Dropdown.Item as={NavLink} to="/cv" icon='trash' text='iş arayan kulanıcı bilgileri' />
+      <Dropdown.Item icon='trash' text='iş veren kulanıcı bilgileri' />
+      <Dropdown.Item icon='trash' text='sistem kulanıcı bilgileri' />
+      <Dropdown.Divider />
+      <Dropdown.Item text='çıkış yap' onClick={props.signOut}/>
+    </Dropdown.Menu>
+  </Dropdown>
+  </a>
         </div>
+        
     )
 }

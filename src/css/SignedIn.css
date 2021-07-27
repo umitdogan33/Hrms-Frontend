@@ -1,0 +1,18 @@
+.signed_in{
+    margin-left: 880px;
+    /*margin-top: 10px;*/
+}
+
+
+.ui.dropdown{
+    margin-top:10px;
+}
+
+.dropdown_text{
+ /* font-weight: bold;*/
+  font-style: oblique;
+}
+
+.dropdown_item>.item{
+    margin-left: -90px;
+}
