@@ -4,4 +4,4 @@ export default class CvService {
     getCv(){
        return axios.get("http://localhost:8080/api/canidate/getalldetails")
     }
-}
+} 
