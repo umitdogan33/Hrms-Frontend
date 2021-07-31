@@ -5,6 +5,7 @@ import JobAdvertisement from "./JobAdvertisement";
 import { Route } from "react-router";
 import CandidateRegister from "./CandidateRegister";
 import viewCv from  "../pages/viewCv"
+import EmployerInformation from "../pages/EmployerInformation";
 // import EmployerRegister from "./EmployerRegister";
 export default function Dashboard() {
   return (
@@ -16,6 +17,8 @@ export default function Dashboard() {
       <Route  path="/register/candidate" component={CandidateRegister}/>
       {/* <Route  path="/register/employers" component={EmployerRegister}/> */}
       <Route path="/cv" component={viewCv}/>
+      <Route path="/employerinformation" component={EmployerInformation}/>
+
       </div>
   );
 }
