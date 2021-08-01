@@ -6,6 +6,7 @@ import { Route } from "react-router";
 import CandidateRegister from "./CandidateRegister";
 import viewCv from  "../pages/viewCv"
 import EmployerInformation from "../pages/EmployerInformation";
+import EmployerEndorsement from "../pages/EmployerEndorsement"
 // import EmployerRegister from "./EmployerRegister";
 export default function Dashboard() {
   return (
@@ -18,7 +19,7 @@ export default function Dashboard() {
       {/* <Route  path="/register/employers" component={EmployerRegister}/> */}
       <Route path="/cv" component={viewCv}/>
       <Route path="/employerinformation" component={EmployerInformation}/>
-
+      <Route path="/employerconfirm" component={EmployerEndorsement}/>
       </div>
   );
 }

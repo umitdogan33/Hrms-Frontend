@@ -11,7 +11,7 @@ export default function SignedIn(props) {
     
       <Dropdown.Item as={NavLink} to="/cv" icon='trash' text='iş arayan kulanıcı bilgileri' />
       <Dropdown.Item as={NavLink} to="/employerinformation" icon='trash' text='iş veren kulanıcı bilgileri' />
-      <Dropdown.Item icon='trash' text='sistem kulanıcı bilgileri' />
+      <Dropdown.Item icon='trash' text='sistem kulanıcı onaylama ekranı'/>
       <Dropdown.Divider />
       <Dropdown.Item text='çıkış yap' onClick={props.signOut}/>
     </Dropdown.Menu>
