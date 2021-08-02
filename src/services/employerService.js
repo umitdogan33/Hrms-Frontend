@@ -11,6 +11,9 @@ export default class EmployerService {
 
     confirmEmployer(id){
         return axios.post('http://localhost:8080/api/employer/confirmemployer?id='+id)
-        console.log(id);
+    }
+
+    getByUserId(id){
+        return axios.get('http://localhost:8080/api/employer/getbyuserid?id='+id)
     }
 }

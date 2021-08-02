@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { Card, CardGroup, Icon, Image,Button } from "semantic-ui-react";
 import JobAdvertisementService from "../services/jobAdvertisementService.js";
 export default function JobAdvertisement() {
@@ -36,7 +37,7 @@ export default function JobAdvertisement() {
                 <span className="date">{job.employer.companyname}</span>
               </Card.Meta>
               <Card.Description>
-             <Button className="detaylar" color="yellow">Detaylar</Button> <Button className="basvuru" color="green">Basvur</Button>
+             <Button className="detaylar" color="yellow">Detaylar</Button> <Button className="basvuru" color="green" as={NavLink} to={`/jobadvertisement/detail/${job.id}`}>Basvur</Button>
                
               </Card.Description>
             </Card.Content>

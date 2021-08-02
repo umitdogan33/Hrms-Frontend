@@ -1,17 +1,18 @@
 import React, { useState,useEffect } from "react";
 import CvService from "../services/cvService";
-import "./cv.css";
+import "./css/cv.css";
 import LanguageService from "../services/languageService"
 
 export default function ViewCv() {
   const [cv, setCv] = useState([]);
+  const [languages,setLanguages] = useState([])
 
-  // useEffect(() => {
-  //   let languageService = new LanguageService();
-  //   languageService
-  //     .getLanguage()
-  //     .then((result) => setLanguage(result.data.data));
-  // }, []);
+  useEffect(() => {
+    let languageService = new LanguageService();
+    languageService
+      .getLanguage()
+      .then((result) => setLanguages(result.data.data));
+  }, []);
 
 
   useEffect(() => {
@@ -98,15 +99,15 @@ export default function ViewCv() {
         </div>
 
         <img className="language_image" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_language_48px-512.png"/>
-{/* {languages.map((language) => ( */}
+{languages.map((language) => (
         <div>
         <h4>
-            <span className="language_name">ingilizce</span>
+            <span className="language_name">{language.language.languageName}</span>
 
           </h4>
 
           </div>
-          {/* ))} */}
+         ))}
       </div>
           ))}
 

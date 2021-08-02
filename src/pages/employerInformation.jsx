@@ -1,5 +1,5 @@
 import React from 'react'
-import "./EmployerInformation.css"
+import "./css/EmployerInformation.css"
 
 export default function employerInformation() {
     return (

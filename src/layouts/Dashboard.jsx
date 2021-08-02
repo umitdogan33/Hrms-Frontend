@@ -7,6 +7,8 @@ import CandidateRegister from "./CandidateRegister";
 import viewCv from  "../pages/viewCv"
 import EmployerInformation from "../pages/EmployerInformation";
 import EmployerEndorsement from "../pages/EmployerEndorsement"
+import JobAdvertisementDetail from "../pages/JobAdvertisementDetail";
+import EmployerUpdate from "../pages/EmployerUpdate";
 // import EmployerRegister from "./EmployerRegister";
 export default function Dashboard() {
   return (
@@ -20,6 +22,10 @@ export default function Dashboard() {
       <Route path="/cv" component={viewCv}/>
       <Route path="/employerinformation" component={EmployerInformation}/>
       <Route path="/employerconfirm" component={EmployerEndorsement}/>
+      <Route path="/jobadvertisement/detail/:id" component={JobAdvertisementDetail}/>
+      <Route path="/employer/update" component={EmployerUpdate}/>
+
+
       </div>
   );
 }

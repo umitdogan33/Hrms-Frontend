@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button, Icon, Menu, Table } from "semantic-ui-react";
 import { toast } from "react-toastify";
-import "./EmployerEndorsement.css"
+import "./css/EmployerEndorsement.css"
 import EmployerService from "../services/employerService";
 
 export default function EmployerEndorsement() {
