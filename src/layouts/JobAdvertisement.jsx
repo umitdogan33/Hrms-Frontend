@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Card, CardGroup, Icon, Image,Button } from "semantic-ui-react";
 import JobAdvertisementService from "../services/jobAdvertisementService.js";
+import "../pages/css/JobAdvertisement.css"
 export default function JobAdvertisement() {
   const [jobAdverts, setJobAdverts] = useState([]);
 
@@ -18,6 +19,7 @@ export default function JobAdvertisement() {
         {jobAdverts?.map((job) => (
           <Card className="test">
             <img className="job" src="jobLogo.png" alt="public" />
+
             <Card.Content>
               <Card.Header floated="center">
                 <a style={{ marginRight: "80px" }}>
@@ -31,6 +33,7 @@ export default function JobAdvertisement() {
                   <Icon name="map marker alternate" />
                  {job.city.cityName}
                 </a>
+                <Icon className="heart outline icon"/>
 
               </Card.Header>
               <Card.Meta>
@@ -38,7 +41,6 @@ export default function JobAdvertisement() {
               </Card.Meta>
               <Card.Description>
              <Button className="detaylar" color="yellow">Detaylar</Button> <Button className="basvuru" color="green" as={NavLink} to={`/jobadvertisement/detail/${job.id}`}>Basvur</Button>
-               
               </Card.Description>
             </Card.Content>
           </Card>

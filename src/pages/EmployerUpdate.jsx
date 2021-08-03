@@ -16,23 +16,31 @@ export default function EmployerUpdate() {
           .then((result) => setEmployer(result.data.data));
           
       }, []);
-   
- console.log(employer.password)
-      const passwordconst =employer.password
-   const initialValues = {user_id:employer.user_id,email:1, password:passwordconst,webSite:employer.webSite,companyname:employer.companyname,phoneNumber:employer.phoneNumber,passwordRepeat:employer.passwordRepeat}
 
+    const initialValues = {user_id:employer.user_id,email:employer.email,password:employer.password,passwordRepeat:employer.passwordRepeat,companyname:employer.companyname,
+        phoneNumber:employer.phoneNumber,webSite:employer.webSite}
+
+        const schema = Yup.object().shape({
+            email:Yup.string().email().required('Email is required'),
+            password:Yup.string().min(6,"6 dan küçük olmaz").required("password is required"),
+            passwordRepeat:Yup.mixed().test("mach","şifreler eşleşmiyor",function(){
+                return this.parent.password === this.parent.passwordRepeat;
+            })
+          });
 
     return (
         <div>
             <Formik
-            initialValues=
-            {initialValues}
             onSubmit={(values)=>{
-                console.log(values);
+                let employerService = new EmployerService();
+                employerService.
+                update(values)
             }}
+            validationSchema={schema}
+            initialValues={initialValues}
+            enableReinitialize
             >
                 <Form className="ui form">
-                    <TextInput name="user_id" readonly="yes"></TextInput>
                     <TextInput placeholder="email" name="email"></TextInput>
                     <TextInput placeholder="password" name="password"></TextInput>
                     <TextInput placeholder="passwordRepeat" name="passwordRepeat"></TextInput>
