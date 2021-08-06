@@ -9,6 +9,7 @@ import EmployerInformation from "../pages/EmployerInformation";
 import EmployerEndorsement from "../pages/EmployerEndorsement"
 import JobAdvertisementDetail from "../pages/JobAdvertisementDetail";
 import EmployerUpdate from "../pages/EmployerUpdate";
+import EmployerUpdateConfirm from "../pages/EmployerUpdateConfirm";
 // import EmployerRegister from "./EmployerRegister";
 export default function Dashboard() {
   return (
@@ -24,6 +25,7 @@ export default function Dashboard() {
       <Route path="/employerconfirm" component={EmployerEndorsement}/>
       <Route path="/jobadvertisement/detail/:id" component={JobAdvertisementDetail}/>
       <Route path="/employer/update" component={EmployerUpdate}/>
+      <Route path="/employer/updateconfirm" component={EmployerUpdateConfirm}/>
 
 
       </div>

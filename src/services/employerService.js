@@ -20,4 +20,12 @@ export default class EmployerService {
     update(employer){
         return axios.post("http://localhost:8080/api/employer/update",employer);
     }
+
+    getByUpdatedData(){
+        return axios.get("http://localhost:8080/api/employer/getByUpdatedDataNotNull")
+    }
+
+    updateConfirm(id){
+        return axios.post("http://localhost:8080/api/employer/updateconfirm?id="+id);
+    }
 }

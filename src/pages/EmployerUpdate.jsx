@@ -5,12 +5,13 @@ import EmployerService from '../services/employerService';
 import { useEffect, useState } from 'react/cjs/react.development';
 import TextInput from "../utilities/customFormControls/TextInput";
 import { Button } from 'semantic-ui-react';
+import { toast } from "react-toastify";
 
 export default function EmployerUpdate() {
    const [employer,setEmployer] = useState([]);
-   
+   let employerService = new EmployerService();
+
     useEffect(() => {
-        let employerService = new EmployerService();
         employerService
           .getByUserId(11) 
           .then((result) => setEmployer(result.data.data));
@@ -28,26 +29,33 @@ export default function EmployerUpdate() {
             })
           });
 
+          function update(values) {
+            employerService.
+            update(values)
+          }
+
+          function toast() {
+            toast.success("Güncelleme işlemi başarılı(sistem çalışanı onayı bekleniyor)")
+        }
+
     return (
         <div>
             <Formik
             onSubmit={(values)=>{
-                let employerService = new EmployerService();
-                employerService.
-                update(values)
+              update(values);
             }}
             validationSchema={schema}
             initialValues={initialValues}
             enableReinitialize
             >
                 <Form className="ui form">
-                    <TextInput placeholder="email" name="email"></TextInput>
+                    <TextInput placeholder="email" name="email" ></TextInput>
                     <TextInput placeholder="password" name="password"></TextInput>
                     <TextInput placeholder="passwordRepeat" name="passwordRepeat"></TextInput>
                     <TextInput placeholder="webSite" name="webSite"></TextInput>
                     <TextInput placeholder="companyname" name="companyname"></TextInput>
                     <TextInput placeholder="phoneNumber" name="phoneNumber"></TextInput>
-                    <Button color="olive" type="sumbit" onClick={()=>console.log(employer)}>Güncelle</Button>
+                    <Button color="olive" type="sumbit" onClick={()=>toast}>Güncelle</Button>
                 </Form>
 
             </Formik>
