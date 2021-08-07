@@ -1,17 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { Card, CardGroup, Icon, Image,Button } from "semantic-ui-react";
+import { Card, CardGroup, Icon, Image, Button } from "semantic-ui-react";
 import JobAdvertisementService from "../services/jobAdvertisementService.js";
-import "../pages/css/JobAdvertisement.css"
+import "../pages/css/JobAdvertisement.css";
+import FavoriteService from "../services/FavoriteService.js";
 export default function JobAdvertisement() {
   const [jobAdverts, setJobAdverts] = useState([]);
+  const [favorite, setFavorite] = useState([]);
+  let jobService = new JobAdvertisementService();
+  let favoriteService = new FavoriteService();
 
   useEffect(() => {
-    let jobService = new JobAdvertisementService();
     jobService
       .getJobAdvertisement()
       .then((result) => setJobAdverts(result.data.data));
   }, []);
+
+
+  useEffect(() => {
+    favoriteService
+      .getByUserId(2)
+      .then((result) => setFavorite(result.data.data));
+  }, []);
+
 
   return (
     <div className="jobAdvertisement">
@@ -23,24 +34,33 @@ export default function JobAdvertisement() {
             <Card.Content>
               <Card.Header floated="center">
                 <a style={{ marginRight: "80px" }}>
-                  <Icon name="hourglass outline icon"/>
+                  {favorite? <Button color="red">Add Favo</Button>:<Button color="green">Delete Favo</Button>}
                   {job.appealDeadline}
                 </a>
+
 
                 <a className="titleName">{job.jobTitle.titleName}</a>
 
                 <a style={{ marginLeft: "30px" }}>
                   <Icon name="map marker alternate" />
-                 {job.city.cityName}
+                  {job.city.cityName}
                 </a>
-                <Icon className="heart outline icon"/>
-
-              </Card.Header>
+                <Icon className="heart outline icon" />
+              </Card.Header>  
               <Card.Meta>
                 <span className="date">{job.employer.companyname}</span>
               </Card.Meta>
               <Card.Description>
-             <Button className="detaylar" color="yellow">Detaylar</Button> <Button className="basvuru" color="green" as={NavLink} to={`/jobadvertisement/detail/${job.id}`}>Basvur</Button>
+                <Button className="detaylar" color="yellow" as={NavLink}
+                  to={`/jobadvertisement/detail/${job.id}`}> 
+                  Detaylar
+                </Button>{" "}
+                <Button
+                  className="basvuru"
+                  color="green"
+                >
+                  Basvur
+                </Button>
               </Card.Description>
             </Card.Content>
           </Card>

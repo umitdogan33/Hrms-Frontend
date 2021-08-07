@@ -10,6 +10,8 @@ import EmployerEndorsement from "../pages/EmployerEndorsement"
 import JobAdvertisementDetail from "../pages/JobAdvertisementDetail";
 import EmployerUpdate from "../pages/EmployerUpdate";
 import EmployerUpdateConfirm from "../pages/EmployerUpdateConfirm";
+import EmployerUpdateDetail from "../pages/EmployerUpdateDetail";
+import ToastPage from "../pages/ToastPage";
 // import EmployerRegister from "./EmployerRegister";
 export default function Dashboard() {
   return (
@@ -19,13 +21,14 @@ export default function Dashboard() {
       <Route  path="/login" component={Login}/>
       <Route exact path="/register" component={Register}/>
       <Route  path="/register/candidate" component={CandidateRegister}/>
-      {/* <Route  path="/register/employers" component={EmployerRegister}/> */}
       <Route path="/cv" component={viewCv}/>
       <Route path="/employerinformation" component={EmployerInformation}/>
       <Route path="/employerconfirm" component={EmployerEndorsement}/>
       <Route path="/jobadvertisement/detail/:id" component={JobAdvertisementDetail}/>
       <Route path="/employer/update" component={EmployerUpdate}/>
       <Route path="/employer/updateconfirm" component={EmployerUpdateConfirm}/>
+      <Route path="/employerupdate/detail/:id" component={EmployerUpdateDetail}/>
+      <Route  path="/test" component={ToastPage}/>
 
 
       </div>
