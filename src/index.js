@@ -5,8 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import 'semantic-ui-css/semantic.min.css'
-import "react-toastify/dist/ReactToastify.min.css"
-
+import "react-toastify/dist/ReactToastify.min.css";
 ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
