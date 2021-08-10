@@ -2,6 +2,8 @@ import React, { useState,useEffect } from "react";
 import CvService from "../services/cvService";
 import "./css/cv.css";
 import LanguageService from "../services/languageService"
+import { Icon } from "semantic-ui-react";
+import { NavLink } from "react-router-dom";
 
 export default function ViewCv() {
   const [cv, setCv] = useState([]);
@@ -22,6 +24,8 @@ export default function ViewCv() {
       .then((result) => setCv(result.data.data));
   }, []);
 
+ console.log(cv)
+ console.error(languages)
 
   return (
 
@@ -34,6 +38,7 @@ export default function ViewCv() {
           className="cvphoto"
           src="https://res.cloudinary.com/cakeresume/image/upload/s--4SuGMyXy--/c_fill,fl_png8,g_face,h_300,w_300/v1547128648/pggod5pcjwfyzql2idfu.png"
         />
+        <i as={NavLink} to="/tesdt" className="edit icon"/>
         <div className="employee_name">
           <strong>{Cv.candidate.firstName}</strong>
         </div>

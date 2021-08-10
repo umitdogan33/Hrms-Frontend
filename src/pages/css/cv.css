@@ -129,6 +129,9 @@
   font-size: 1.5rem;
   margin-right:4px;
   margin-bottom:3px;
-  
+}
 
+i.icon.edit:before{
+  margin-left: 458px;
+  margin-top: -150px;
 }

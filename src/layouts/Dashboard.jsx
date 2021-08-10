@@ -12,7 +12,7 @@ import EmployerUpdate from "../pages/EmployerUpdate";
 import EmployerUpdateConfirm from "../pages/EmployerUpdateConfirm";
 import EmployerUpdateDetail from "../pages/EmployerUpdateDetail";
 import ToastPage from "../pages/ToastPage";
-// import EmployerRegister from "./EmployerRegister";
+import EditCv from "../pages/EditCv"
 export default function Dashboard() {
   return (
     <div className="dashboard">
@@ -28,7 +28,8 @@ export default function Dashboard() {
       <Route path="/employer/update" component={EmployerUpdate}/>
       <Route path="/employer/updateconfirm" component={EmployerUpdateConfirm}/>
       <Route path="/employerupdate/detail/:id" component={EmployerUpdateDetail}/>
-      <Route  path="/test" component={ToastPage}/>
+      <Route  path="/editcv" component={EditCv}/>
+
 
 
       </div>
